@@ -254,7 +254,7 @@ def get_tau_inv(kx, ky, T, s_coeff, tau_choice, tau_coeff, hole_like):
         
         iso = tau_coeff[0] + tau_coeff[1]*kB*T/hbar + tau_coeff[2]*T**2
         ani = tau_coeff[3] + tau_coeff[4]*T + tau_coeff[5]*T**2
-        return iso + ani*dos/1e30
+        return iso + ani*dos*e*1e-10
     
     else:
         raise ValueError("Not a valid value for `tau_choice`; " +\
