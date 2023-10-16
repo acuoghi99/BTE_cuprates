@@ -125,7 +125,7 @@ The FLEX-CVC approximation is implemented in a Boltzmann framework by substituti
 <a id='eq-CVC'></a>
 $$\boldsymbol{J_k} = \frac{1}{1-\alpha_{\boldsymbol{k}}^2}\left(\boldsymbol{v_k}+\alpha_{\boldsymbol{k}}\boldsymbol{v}_{\boldsymbol{k}'}\right) \tag{5}$$
 
-with $\alpha_{\boldsymbol{k}}<1$ taking the maximum value around the hot spots, and where $(k_x', k_y') = (-k_y, -k_x)$ for $k_xk_y>0$ and $(k_y, k_x)$ for $k_xk_y<0$.
+with $\alpha_{\boldsymbol{k}}<1$ taking the maximum value around the hot spots, and where $(k_x', k_y') = (-k_y, -k_x)$ for $k_xk_y>0$ and $(k_y, k_x)$ for $k_xk_y<0.$
 
 <a id = 'fig-mfp' ></a>
 <table>
@@ -224,7 +224,7 @@ def get_tau_inv(kx, ky, T, s_coeff, tau_choice, tau_coeff, hole_like)
 def get_v(kx, ky, s_coeff, FLEX)
 ```
 
-- The function $\alpha_{\boldsymbol{k}}$ is computed by the routine `get_alpha`: it is set to $0$ at the anti-nodal regions of the BZ and reaches a maximum value $< 0.9$ at points in $k$-space where the FS intersects the AFBZ.
+- The function $\alpha_{\boldsymbol{k}}$ is computed by the routine `get_alpha`: it is set to $0$ at the anti-nodal regions of the BZ and reaches a maximum value $< 1$ at points in $k$-space where the FS intersects the AFBZ.
 
 ```python
 def get_alpha(kx, ky, s_coeff)
