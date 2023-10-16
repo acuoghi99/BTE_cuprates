@@ -330,7 +330,7 @@ out_NdLSCO.make_legend(fig)
 </table>
 
 ### GRAPHICAL USER INTERFACE
-To set up a field or temperature sweep, it is possible also to make use of a GUI within a [Jupyter Notebook](https://jupyter.org/) (provided that the [ipywidgets](https://ipywidgets.readthedocs.io/en/stable/) package is installed). The usage is straightforward:
+To set up a field or temperature sweep, it is possible also to make use of a GUI within a [Jupyter Notebook](https://jupyter.org/) (provided that the [ipywidgets](https://ipywidgets.readthedocs.io/en/stable/) package is installed). The usage is straightforward: inside a Jupyter Notebook cell simply run the code below,
 
 ```python
 from Code.BTE_GUI import *
