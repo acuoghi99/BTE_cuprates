@@ -59,7 +59,7 @@ This expression is simplified for a cylindrical FS, since $\int d^2k = \frac{2\p
 <a id='eq-sigma'></a>
 $$\sigma_{ij} = \frac{e^2}{2\pi^2c\hbar}\int_{\text{FS}}d\boldsymbol{k} \ \frac{v_i}{v_F}\int_0^{+\infty}dt \ v_j(\boldsymbol{k}(-t))\ e^{-\int_0^t dt'\ \tau^{-1}(\boldsymbol{k}(-t'))} \tag{2}$$
 
-We assume that the quasiparticle follows standard cyclotron motion, and therefore, we compute the time evolution of $\boldsymbol{k}$ using Newton's equations :
+We assume that the quasiparticle follows standard cyclotron motion, and therefore, we compute the time evolution of $\boldsymbol{k}$ using Newton's equations:
 
 <a id='eq-cycl'></a>
 $$\hbar \frac{d\boldsymbol{k}}{dt} = e\boldsymbol{v} \times \boldsymbol{B} \tag{3} $$
@@ -110,7 +110,7 @@ We also consider the Fluctuation Exchange Approximation (FLEX) + Current Vertex 
 <a id='fig-CVC'></a>
 <table>
 <caption >
-<h6><i>Fig. 6</i> - The CVC+FLEX approximation<a href="#ref-Kon"><sup>[4]</sup></a>. The left panel highlights the correlations introduced inside the BZ due to spin fluctuations. The right panel shows how the current is modified by this approximation.</h6>
+<h6><i>Fig. 6</i> - The FLEX-CVC approximation<a href="#ref-Kon"><sup>[4]</sup></a>. The left panel highlights the correlations introduced inside the BZ due to spin fluctuations. The right panel shows how the current is modified by this approximation.</h6>
 </caption>
 <tbody>
 <tr>
