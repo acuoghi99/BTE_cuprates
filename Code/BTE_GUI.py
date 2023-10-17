@@ -82,13 +82,13 @@ class GUI():
         self.tau_choice_w = Dropdown(description=r'$\tau$ model', 
                                      options=['additive', 'additive (Gr)', 'fixed peaks', 'DOS'])
         self.phase_w = IntSlider(description='phase (°)', value=0, min=0, max=90)
-        self.tau_inv_iso_w = FloatSlider(value=10., min=0, max=1000, step=0.01)
-        self.alpha_iso_w = FloatSlider(value=1.0, min=0, max=100.0, step=0.01)
-        self.beta_iso_w = FloatSlider(value=0., min=0, max=100, step=0.01)
-        self.tau_inv_ani_w = FloatSlider(value=0., min=0, max=10000.0, step=0.01)
-        self.alpha_ani_w = FloatSlider(value=0., min=0, max=100, step=0.01)
-        self.beta_ani_w = FloatSlider(value=0., min=0, max=1000, step=0.01)
-        self.nu_w = IntSlider(value=2, min=0, max=10000, step=1)
+        self.tau_inv_iso_w = FloatSlider(value=10., min=0, max=1e6, step=0.01)
+        self.alpha_iso_w = FloatSlider(value=1.0, min=0, max=1e6, step=0.01)
+        self.beta_iso_w = FloatSlider(value=0., min=0, max=1e6, step=0.01)
+        self.tau_inv_ani_w = FloatSlider(value=0., min=0, max=1e6, step=0.01)
+        self.alpha_ani_w = FloatSlider(value=0., min=0, max=1e6, step=0.01)
+        self.beta_ani_w = FloatSlider(value=0., min=0, max=1e6, step=0.01)
+        self.nu_w = IntSlider(value=2, min=0, max=1000, step=1)
         
         self.out_fig_tau = Output()
         with self.out_fig_tau:
@@ -167,7 +167,7 @@ class GUI():
         for widg in self.tau_inv_w.children:
             for wdg in widg.children:
                 wdg.layout = Layout(justify_content='flex-end', align_items='baseline')
-                wdg.children[1].readout_format = '.2f'
+                wdg.children[1].readout_format = '.2e'
                 wdg.children[0].layout = Layout(padding='0px 10px 0px 0px')
                 wdg.children[1].layout = Layout(height='60px', width='180px', padding='0px 0px 0px 0px')
         self.nu_w.readout_format = 'd'
@@ -306,7 +306,6 @@ class GUI():
         if t_c[:8] == 'additive':
             self.tau_inv_w.children[0].children[0].children[0].value = r'$\tau^{-1}_{iso}\ (ps^{-1})$'
             self.tau_inv_w.children[1].children[0].children[0].value = r'$\tau^{-1}_{ani}\ (ps^{-1})$'
-            self.tau_inv_ani_w.max = 500
             
             eq_add = r'$$\tau^{-1}(\phi,T) = \tau^{-1}_{iso} + \alpha_{iso}\frac{k_B T}{\hbar} +' +\
                      r'\beta_{iso} T^2 + \left(\tau^{-1}_{ani} + \alpha_{ani} T + \beta_{ani} T^2\right)' +\
@@ -332,15 +331,6 @@ class GUI():
                     self.alpha_ani_w.value = 0
                     self.beta_ani_w.value = 0
                     self.nu_w.value = 12
-                    
-                elif t_c[-3:-1] == 'Ay':
-                    self.tau_inv_iso_w.value = 3.85
-                    self.alpha_iso_w.value = 0
-                    self.beta_iso_w.value = 0.50
-                    self.tau_inv_ani_w.value = 0.21
-                    self.alpha_ani_w.value = 0.10
-                    self.beta_ani_w.value = 0
-                    self.nu_w.value = 2
             
             else:
                 self.tau_inv_iso_w.disabled = False
@@ -359,7 +349,6 @@ class GUI():
             self.tau_inv_w.children[0].children[0].children[0].value = r'$\tau^{-1}_{p}\ (ps^{-1})$'
             self.tau_inv_w.children[1].children[0].children[0].value = r'$c_{ani}$'
             self.tau_inv_ani_w.value = 7.5
-            self.tau_inv_ani_w.max = 50
             self.tau_inv_iso_w.disabled = False
             self.alpha_iso_w.disabled = True
             self.beta_iso_w.disabled = True
@@ -376,7 +365,6 @@ class GUI():
             
             self.tau_inv_w.children[0].children[0].children[0].value = r'$\tau^{-1}_{iso}\ (ps^{-1})$'
             self.tau_inv_w.children[1].children[0].children[0].value = r'$\tau^{-1}_{ani}\ (ps^{-1})$'
-            self.tau_inv_ani_w.max = 10000
             
             self.tau_inv_iso_w.disabled = False
             self.alpha_iso_w.disabled = False
